@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = receivingEnd.getExtras();;
         TextView profileTitle = (TextView) findViewById(R.id.profileTitle);
         TextView profileDescription = (TextView) findViewById(R.id.description);
-        Button followBtn = (Button) findViewById(R.id.followBtn);
+        Button followBtn = (Button) findViewById(R.id.btnFollow);
         User user;
         if (bundle != null){
             user = bundle.getParcelable("user");
