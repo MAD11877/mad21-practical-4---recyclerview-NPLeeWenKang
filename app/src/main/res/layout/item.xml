@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <ImageView
-        android:id="@+id/img"
+        android:id="@+id/img_profile"
         android:src="@drawable/ic_launcher_round"
         android:layout_height="50dp"
         android:layout_width="50dp"
@@ -19,15 +19,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        app:layout_constraintLeft_toRightOf="@id/img"
-        app:layout_constraintTop_toTopOf="@id/img"
+        app:layout_constraintLeft_toRightOf="@id/img_profile"
+        app:layout_constraintTop_toTopOf="@id/img_profile"
         android:textStyle="bold"/>
     <TextView
         android:id="@+id/desc"
         android:text="Description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/img"
+        app:layout_constraintBottom_toBottomOf="@id/img_profile"
         app:layout_constraintLeft_toLeftOf="@id/text1" />
     <TextView
         android:id="@+id/text2"
