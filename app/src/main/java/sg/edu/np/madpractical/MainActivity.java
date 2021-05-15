@@ -18,7 +18,7 @@ import android.widget.Toast;
 import sg.edu.np.madpractical.R;
 
 public class MainActivity extends AppCompatActivity {
-
+    private int position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent receivingEnd = getIntent();
         Bundle bundle = receivingEnd.getExtras();;
+        position = receivingEnd.getIntExtra("position",0);
         TextView profileTitle = (TextView) findViewById(R.id.profileTitle);
         TextView profileDescription = (TextView) findViewById(R.id.description);
         Button followBtn = (Button) findViewById(R.id.btnFollow);
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause( ) {
         super.onPause();
         Log.i("Debug","onPaused");
-        ListActivity.uList.get(0).setFollowed(!ListActivity.uList.get(0).isFollowed());
+        ListActivity.uList.get(position).setFollowed(!ListActivity.uList.get(position).isFollowed());
     }
     @Override
     protected void onStop() {

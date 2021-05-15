@@ -63,6 +63,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder>{
                         Bundle bundle = new Bundle();
                         bundle.putParcelable("user", (Parcelable) u);
                         changePage.putExtras(bundle);
+                        changePage.putExtra("position",position);
                         context.startActivity(changePage);
                     }
                 });
