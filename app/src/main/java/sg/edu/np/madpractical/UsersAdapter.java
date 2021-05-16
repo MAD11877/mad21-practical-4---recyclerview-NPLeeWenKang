@@ -42,11 +42,9 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         User u = data.get(position);
-        if (!u.getName().substring(u.getName().length()-1).equals("7")){
-            Log.d("Pos", u.getName().substring(u.getName().length()-1));
-            holder.txt.setText(u.getName());
-            holder.txt2.setText(""+u.getDescription());
-        }
+        Log.d("Pos", u.getName().substring(u.getName().length()-1));
+        holder.txt.setText(u.getName());
+        holder.txt2.setText(""+u.getDescription());
 
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override

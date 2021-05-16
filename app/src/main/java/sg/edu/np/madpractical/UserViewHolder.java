@@ -17,7 +17,9 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         txt = itemView.findViewById(R.id.text1);
         txt2 = itemView.findViewById(R.id.text2);
-        view = itemView;
+        //view = itemView;
+        // Set the listener for the whole box
+        view = itemView.findViewById(R.id.img_profile);
     }
 }
 
