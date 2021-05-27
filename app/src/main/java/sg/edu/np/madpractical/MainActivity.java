@@ -19,6 +19,7 @@ import sg.edu.np.madpractical.R;
 
 public class MainActivity extends AppCompatActivity {
     private int position;
+    private User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         TextView profileTitle = (TextView) findViewById(R.id.profileTitle);
         TextView profileDescription = (TextView) findViewById(R.id.description);
         Button followBtn = (Button) findViewById(R.id.btnFollow);
-        User user;
+
         if (bundle != null){
             user = bundle.getParcelable("user");
             profileTitle.setText(user.getName());
@@ -74,7 +75,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause( ) {
         super.onPause();
         Log.i("Debug","onPaused");
-        ListActivity.uList.get(position).setFollowed(!ListActivity.uList.get(position).isFollowed());
+        if (ListActivity.uList.get(position).isFollowed() != user.isFollowed()){
+            ListActivity.uList.get(position).setFollowed(user.isFollowed());
+
+        }
     }
     @Override
     protected void onStop() {
